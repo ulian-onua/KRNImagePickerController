@@ -14,6 +14,7 @@
 		44FA35AA1D6887C9004876C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FA35A91D6887C9004876C2 /* Assets.xcassets */; };
 		44FA35AD1D6887C9004876C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FA35AB1D6887C9004876C2 /* LaunchScreen.storyboard */; };
 		44FA35BA1D688862004876C2 /* KRNImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FA35B91D688862004876C2 /* KRNImagePickerController.m */; };
+		44FA35BD1D68A609004876C2 /* KRNAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FA35BC1D68A609004876C2 /* KRNAlertController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		44FA35AE1D6887C9004876C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FA35B81D688862004876C2 /* KRNImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNImagePickerController.h; sourceTree = "<group>"; };
 		44FA35B91D688862004876C2 /* KRNImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNImagePickerController.m; sourceTree = "<group>"; };
+		44FA35BB1D68A609004876C2 /* KRNAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRNAlertController.h; sourceTree = "<group>"; };
+		44FA35BC1D68A609004876C2 /* KRNAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRNAlertController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 			children = (
 				44FA35A01D6887C9004876C2 /* AppDelegate.h */,
 				44FA35A11D6887C9004876C2 /* AppDelegate.m */,
+				44FA35BE1D68AC46004876C2 /* KRNAlertController */,
 				44FA35B71D688862004876C2 /* KRNImagePickerController */,
 				44FA35A31D6887C9004876C2 /* ViewController.h */,
 				44FA35A41D6887C9004876C2 /* ViewController.m */,
@@ -91,6 +95,15 @@
 			);
 			name = KRNImagePickerController;
 			path = ../../../KRNImagePickerController;
+			sourceTree = "<group>";
+		};
+		44FA35BE1D68AC46004876C2 /* KRNAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				44FA35BB1D68A609004876C2 /* KRNAlertController.h */,
+				44FA35BC1D68A609004876C2 /* KRNAlertController.m */,
+			);
+			name = KRNAlertController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FA35BD1D68A609004876C2 /* KRNAlertController.m in Sources */,
 				44FA35A51D6887C9004876C2 /* ViewController.m in Sources */,
 				44FA35BA1D688862004876C2 /* KRNImagePickerController.m in Sources */,
 				44FA35A21D6887C9004876C2 /* AppDelegate.m in Sources */,
@@ -281,6 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KRNImagePickerControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ulian-onua.KRNImagePickerControllerExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KRNImagePickerControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ulian-onua.KRNImagePickerControllerExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";

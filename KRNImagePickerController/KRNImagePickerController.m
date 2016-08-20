@@ -17,6 +17,8 @@ NSString* const KRNCameraIsNotAvailableSuggestion = @"Probably camera is already
 NSString* const KRNSavedPhotosAlbumIsNotAvailableMessage = @"Saved photos album is not available";
 NSString* const KRNSavedPhotosAlbumIsNotAvailableSuggestion = @"Probably saved photos album is empty.";
 
+NSString* const KRNOperationWasCancelled = @"Operation was cancelled by user";
+
 
 
 static KRNImagePickerController *imagePickerController;
@@ -184,12 +186,14 @@ static KRNImagePickerController *imagePickerController;
 }
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    NSError* error = [NSError errorWithDomain:KRNImagePickerControllerErrorDomain code:KRNImagePickerOperationIsCancelled userInfo:nil];
-
-    if (self.KRNImagePickerCompletionWithImage) {  //call block
-        self.KRNImagePickerCompletionWithImage(nil, error);
-    }
-
+    [picker dismissViewControllerAnimated:YES completion:^{
+        NSError* error = [NSError errorWithDomain:KRNImagePickerControllerErrorDomain code:KRNImagePickerOperationIsCancelled userInfo:@{NSLocalizedDescriptionKey : KRNOperationWasCancelled}];
+        
+        if (self.KRNImagePickerCompletionWithImage) {  //call block
+            self.KRNImagePickerCompletionWithImage(nil, error);
+        }
+    }];
+  
 }
 
 @end

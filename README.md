@@ -26,3 +26,21 @@ UIImagePickerControllerSourceTypeCamera or UIImagePickerControllerSourceTypeSave
 2. viewController -  is an instance of UIViewController from which UIImagePickerController will be presenting
 3. completion - is a block which will be called after picking the image or if error is occured.
 
+For example, if you have instance of UIImageView in your ViewController and you want to pick UIImage for that UIImageView instance, you can easily use the method above:
+
+```objc
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+...
+
+[KRNImagePickerController pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+if (!error) {
+self.imageView.image = image;
+} else {
+if (error.code == KRNImagePickerOperationIsCancelled) return; // cancelation of operation is also considered to be an error so you may just return here 
+// handle the error
+}
+}];
+
+
+```

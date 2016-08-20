@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "KRNAlertController.h"
 #import "KRNImagePickerController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,14 +19,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    KRNImagePickerController *picker = [KRNImagePickerController new];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+#pragma mark - Pick an image actions -
+    
+- (IBAction)fromRandomSource:(id)sender {
+    [KRNImagePickerController pickFromSource:arc4random() % 3 fromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+        if (!error) {
+            self.imageView.image = image;
+        } else {
+            if (error.code == KRNImagePickerOperationIsCancelled) return;
+            
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+    
+- (IBAction)fromCamera:(id)sender {
+    [KRNImagePickerController pickFromCameraFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+        if (!error) {
+            self.imageView.image = image;
+        } else {
+            if (error.code == KRNImagePickerOperationIsCancelled) return;
+            
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+
+- (IBAction)fromPhotoLibrary:(id)sender {
+    [KRNImagePickerController pickFromPhotoLibraryFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+        if (!error) {
+            self.imageView.image = image;
+        } else {
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+    
+- (IBAction)fromSavedPhotosAlbum:(id)sender {
+    [KRNImagePickerController pickFromSavedPhotosAlbumFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+        if (!error) {
+            self.imageView.image = image;
+        } else {
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
 }
 
 @end
