@@ -18,7 +18,7 @@ For picking image just use next method without need to create any instances of U
 
 ```objc
 
-    + (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
++ (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 ```
 
 1. sourceType - is a type of source you want to pick from an image (UIImagePickerControllerSourceTypePhotoLibrary,
@@ -33,14 +33,15 @@ For example, if you have instance of UIImageView in your ViewController and you 
 
 ...
 
-[KRNImagePickerController pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:self withCompletion:^(UIImage *image, NSError *error) {
-if (!error) {
-self.imageView.image = image;
-} else {
-if (error.code == KRNImagePickerOperationIsCancelled) return; // cancelation of operation is also considered to be an error so you may just return here 
-// handle the error
-}
+[KRNImagePickerController pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary 
+fromViewController:self 
+withCompletion:^(UIImage *image, NSError *error) {
+    if (!error) {
+        self.imageView.image = image;
+    } else {
+        if (error.code == KRNImagePickerOperationIsCancelled) return; // cancelation of operation is also considered to be an error so you may just return here 
+        // handle the error
+    }
 }];
-
-
 ```
+Cancelation of operation is also considered to be an error for simplification. If user cancel picking operation KRNImagePickerOperationIsCancelled error will be passed in completion block which you can handle and perform appropriate operations.
