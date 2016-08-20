@@ -10,7 +10,7 @@ KRNImagePickerController is a wrapper under UIImagePickerController to simplify 
 
 ##Usage
 
-(see sample Xcode project in `/KLCPopupExample`)
+(see sample Xcode project in `/KRNImagePickerController`)
 
 ## Pick an image
 
