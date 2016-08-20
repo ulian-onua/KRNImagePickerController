@@ -53,24 +53,24 @@ static KRNImagePickerController *imagePickerController;
 
 #pragma mark - Picker methods with completion block -
 
-+ (void)pickFromPhotoLibraryFromViewController:(UIViewController*) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion {
++ (void)pickFromPhotoLibraryFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion {
     
 
     [self pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:viewController withCompletion:completion];
 
 }
 
-+ (void)pickFromCameraFromViewController:(UIViewController*) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion
++ (void)pickFromCameraFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion
 {
     [self pickFromSource:UIImagePickerControllerSourceTypeCamera fromViewController:viewController withCompletion:completion];
 }
-+ (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController*) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion
++ (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion
 {
     [self pickFromSource:UIImagePickerControllerSourceTypeSavedPhotosAlbum fromViewController:viewController withCompletion:completion];
 }
 
 
-+ (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController*) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion {
++ (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion {
     
     
     //check if source type is available
@@ -95,22 +95,22 @@ static KRNImagePickerController *imagePickerController;
 
 #pragma mark - Image View mapping -
 
-+ (void)pickFromPhotoLibraryFromViewController:(UIViewController*) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed {
++ (void)pickFromPhotoLibraryFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed {
     [self pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:viewController andMapToImageView:imageView withSucceed:succeed];
 }
 
-+ (void)pickFromCameraFromViewController:(UIViewController*) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
++ (void)pickFromCameraFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
 {
     [self pickFromSource:UIImagePickerControllerSourceTypeCamera fromViewController:viewController andMapToImageView:imageView withSucceed:succeed];
 }
 
-+ (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController*) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
++ (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
 {
     [self pickFromSource:UIImagePickerControllerSourceTypeSavedPhotosAlbum fromViewController:viewController andMapToImageView:imageView withSucceed:succeed];
 }
 
 
-+ (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController*) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
++ (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
 {
     [self pickFromSource:sourceType fromViewController:viewController withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {

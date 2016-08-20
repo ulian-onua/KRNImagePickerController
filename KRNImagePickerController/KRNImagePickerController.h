@@ -26,10 +26,14 @@ typedef void(^KRNImagePickerSucceedBlock)(NSError* error);  // if succeed error 
 
 #pragma mark - Picker methods with completion block -
 
+//designated method
++ (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
+
+//convinience methods
 + (void)pickFromPhotoLibraryFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 + (void)pickFromCameraFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 + (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
-+ (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
+
 
 
 #pragma mark - Image View mapping -
