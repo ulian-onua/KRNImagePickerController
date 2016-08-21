@@ -114,10 +114,11 @@ static KRNImagePickerController *imagePickerController;
 
 + (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed
 {
+    __weak UIImageView *weakImageView = imageView;
+    
     [self pickFromSource:sourceType fromViewController:viewController withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
-            imageView.image = image;
-            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            weakImageView.image = image;
             if (succeed) {
                 succeed(nil);
             }

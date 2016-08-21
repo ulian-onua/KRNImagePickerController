@@ -21,7 +21,6 @@
     [super viewDidLoad];
     
 }
-
     
 #pragma mark - Pick an image actions -
     
@@ -68,5 +67,44 @@
         }
     }];
 }
+    
+#pragma mark - Map to image actions -
+- (IBAction)mapFromRandomSource:(id)sender {
+    [KRNImagePickerController pickFromSource:arc4random() % 3 fromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+        if (error) {
+            if (error.code == KRNImagePickerOperationIsCancelled) return;
+            
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+    
+- (IBAction)mapFromCamera:(id)sender {
+    [KRNImagePickerController pickFromCameraFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+        if (error) {
+            if (error.code == KRNImagePickerOperationIsCancelled) return;
+            
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+    
+- (IBAction)mapFromPhotoLibrary:(id)sender {
+    [KRNImagePickerController pickFromPhotoLibraryFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+        if (error) {
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+    }];
+}
+    
+- (IBAction)mapFromSavedPhotosAlbum:(id)sender {
+    [KRNImagePickerController pickFromSavedPhotosAlbumFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+        if (error) {
+            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+        }
+        
+    }];
+}
+
 
 @end

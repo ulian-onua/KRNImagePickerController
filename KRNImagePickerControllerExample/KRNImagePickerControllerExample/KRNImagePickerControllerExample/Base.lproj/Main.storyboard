@@ -22,11 +22,44 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zTY-2I-wzj">
                                 <rect key="frame" x="20" y="20" width="560" height="240"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-pE-Q2B">
+                                <rect key="frame" x="20" y="519" width="132" height="30"/>
+                                <state key="normal" title="From Photo Library"/>
+                                <connections>
+                                    <action selector="mapFromPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJb-4x-yYU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-z7-EXh">
+                                <rect key="frame" x="20" y="552" width="181" height="30"/>
+                                <state key="normal" title="From Saved Photos Album"/>
+                                <connections>
+                                    <action selector="mapFromSavedPhotosAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DLW-NO-gki"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick an image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGk-ub-fX3">
+                                <rect key="frame" x="20" y="268" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map to UIImageView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-4j-FyU">
+                                <rect key="frame" x="20" y="429" width="168" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-Ks-vIQ">
                                 <rect key="frame" x="20" y="292" width="143" height="30"/>
                                 <state key="normal" title="From random source"/>
                                 <connections>
                                     <action selector="fromRandomSource:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lty-fK-M5d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-fD-Dg7">
+                                <rect key="frame" x="20" y="325" width="93" height="30"/>
+                                <state key="normal" title="From Camera"/>
+                                <connections>
+                                    <action selector="fromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jBw-Uw-xVq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCt-DV-xRF">
@@ -43,36 +76,47 @@
                                     <action selector="fromSavedPhotosAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAx-cj-1Q5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick an image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGk-ub-fX3">
-                                <rect key="frame" x="20" y="268" width="119" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-fD-Dg7">
-                                <rect key="frame" x="20" y="325" width="93" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVY-8K-PhE">
+                                <rect key="frame" x="20" y="453" width="143" height="30"/>
+                                <state key="normal" title="From random source"/>
+                                <connections>
+                                    <action selector="mapFromRandomSource:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyC-6U-fCV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9d-03-kdA">
+                                <rect key="frame" x="20" y="486" width="93" height="30"/>
                                 <state key="normal" title="From Camera"/>
                                 <connections>
-                                    <action selector="fromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jBw-Uw-xVq"/>
+                                    <action selector="mapFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3N-r8-qZz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ddR-z7-EXh" firstAttribute="top" secondItem="TWJ-pE-Q2B" secondAttribute="bottom" constant="3" id="1eS-Qo-bcb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zTY-2I-wzj" secondAttribute="leading" id="51K-Yd-IFD"/>
                             <constraint firstItem="NGk-ub-fX3" firstAttribute="top" secondItem="zTY-2I-wzj" secondAttribute="bottom" constant="8" id="5JS-0k-p9m"/>
                             <constraint firstItem="qxI-Ks-vIQ" firstAttribute="leading" secondItem="NGk-ub-fX3" secondAttribute="leading" id="7VT-hR-Ccs"/>
                             <constraint firstItem="vLM-uL-okv" firstAttribute="leading" secondItem="zCt-DV-xRF" secondAttribute="leading" id="AJf-iQ-DUs"/>
+                            <constraint firstItem="q8E-4j-FyU" firstAttribute="leading" secondItem="vLM-uL-okv" secondAttribute="leading" id="EH2-4j-k6d"/>
+                            <constraint firstItem="q8E-4j-FyU" firstAttribute="top" secondItem="vLM-uL-okv" secondAttribute="bottom" constant="8" id="LbU-8q-9wT"/>
+                            <constraint firstItem="ddR-z7-EXh" firstAttribute="leading" secondItem="TWJ-pE-Q2B" secondAttribute="leading" id="Ll0-U3-7rF"/>
+                            <constraint firstItem="k9d-03-kdA" firstAttribute="top" secondItem="sVY-8K-PhE" secondAttribute="bottom" constant="3" id="MxL-QD-DhS"/>
+                            <constraint firstItem="sVY-8K-PhE" firstAttribute="leading" secondItem="q8E-4j-FyU" secondAttribute="leading" id="PqH-Nz-wbK"/>
+                            <constraint firstItem="TWJ-pE-Q2B" firstAttribute="top" secondItem="k9d-03-kdA" secondAttribute="bottom" constant="3" id="SWk-XB-BrP"/>
                             <constraint firstItem="vLM-uL-okv" firstAttribute="top" secondItem="zCt-DV-xRF" secondAttribute="bottom" constant="3" id="TxA-2q-xT9"/>
                             <constraint firstItem="3fJ-fD-Dg7" firstAttribute="top" secondItem="qxI-Ks-vIQ" secondAttribute="bottom" constant="3" id="WwB-MT-IcX"/>
                             <constraint firstItem="3fJ-fD-Dg7" firstAttribute="leading" secondItem="qxI-Ks-vIQ" secondAttribute="leading" id="Yvj-xy-ngf"/>
+                            <constraint firstItem="sVY-8K-PhE" firstAttribute="top" secondItem="q8E-4j-FyU" secondAttribute="bottom" constant="3" id="ZJn-ng-hug"/>
                             <constraint firstItem="zTY-2I-wzj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="aYg-Oi-MuA"/>
+                            <constraint firstItem="TWJ-pE-Q2B" firstAttribute="leading" secondItem="k9d-03-kdA" secondAttribute="leading" id="bjz-6P-2sB"/>
                             <constraint firstItem="zCt-DV-xRF" firstAttribute="top" secondItem="3fJ-fD-Dg7" secondAttribute="bottom" constant="3" id="han-8V-Vb6"/>
                             <constraint firstItem="NGk-ub-fX3" firstAttribute="leading" secondItem="zTY-2I-wzj" secondAttribute="leading" id="juI-74-pqt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zTY-2I-wzj" secondAttribute="trailing" id="nW5-cF-ill"/>
                             <constraint firstItem="qxI-Ks-vIQ" firstAttribute="top" secondItem="NGk-ub-fX3" secondAttribute="bottom" constant="3" id="nfg-j4-DeR"/>
                             <constraint firstItem="zTY-2I-wzj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="oBu-Vd-RaP"/>
                             <constraint firstItem="zCt-DV-xRF" firstAttribute="leading" secondItem="3fJ-fD-Dg7" secondAttribute="leading" id="uDy-6h-ppd"/>
+                            <constraint firstItem="k9d-03-kdA" firstAttribute="leading" secondItem="sVY-8K-PhE" secondAttribute="leading" id="yeN-dL-WD6"/>
                         </constraints>
                     </view>
                     <connections>

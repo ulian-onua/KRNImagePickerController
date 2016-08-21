@@ -29,7 +29,7 @@ typedef void(^KRNImagePickerSucceedBlock)(NSError* error);  // if succeed error 
 //designated method
 + (void)pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 
-//convinience methods
+//convinient methods
 + (void)pickFromPhotoLibraryFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 + (void)pickFromCameraFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
 + (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage)completion;
@@ -40,11 +40,13 @@ typedef void(^KRNImagePickerSucceedBlock)(NSError* error);  // if succeed error 
 
 //mapping picked image to UIImageView instance with contentMode set to AspectFit
 
+//designated method
++ (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController andMapToImageView:(UIImageView *)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
+
+//convinient methods
 + (void)pickFromPhotoLibraryFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
 + (void)pickFromCameraFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
 + (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
-
-+ (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *)viewController andMapToImageView:(UIImageView *)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
 
 
 #pragma mark - Clear memory -

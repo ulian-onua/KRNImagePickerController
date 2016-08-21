@@ -68,8 +68,7 @@
 				44FA35A11D6887C9004876C2 /* AppDelegate.m */,
 				44FA35BE1D68AC46004876C2 /* KRNAlertController */,
 				44FA35B71D688862004876C2 /* KRNImagePickerController */,
-				44FA35A31D6887C9004876C2 /* ViewController.h */,
-				44FA35A41D6887C9004876C2 /* ViewController.m */,
+				44FA35BF1D69A1D9004876C2 /* View Controller */,
 				44FA35A61D6887C9004876C2 /* Main.storyboard */,
 				44FA35A91D6887C9004876C2 /* Assets.xcassets */,
 				44FA35AB1D6887C9004876C2 /* LaunchScreen.storyboard */,
@@ -104,6 +103,15 @@
 				44FA35BC1D68A609004876C2 /* KRNAlertController.m */,
 			);
 			name = KRNAlertController;
+			sourceTree = "<group>";
+		};
+		44FA35BF1D69A1D9004876C2 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44FA35A31D6887C9004876C2 /* ViewController.h */,
+				44FA35A41D6887C9004876C2 /* ViewController.m */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
