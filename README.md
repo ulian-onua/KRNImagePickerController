@@ -37,10 +37,10 @@ For example, if you have instance of UIImageView in your ViewController and you 
 fromViewController:self 
 withCompletion:^(UIImage *image, NSError *error) {
 if (!error) {
-self.imageView.image = image;
+    self.imageView.image = image;
 } else {
-if (error.code == KRNImagePickerOperationIsCancelled) return; // cancelation of operation is also considered to be an error so you may just return here 
-// handle the error
+    if (error.code == KRNImagePickerOperationIsCancelled) return; // cancelation of operation is also considered to be an error so you may just return here 
+    // handle the error
 }
 }];
 ```
@@ -72,9 +72,9 @@ For mapping you can use next method:
 
 [KRNImagePickerController pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
 if (error) {
-if (error.code == KRNImagePickerOperationIsCancelled) return;
+    if (error.code == KRNImagePickerOperationIsCancelled) return;
 
-[KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+    [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
 }
 }];
 ```
@@ -90,6 +90,3 @@ There are also convinient methods which you can use to map picked image to UIIma
 // from Saved photos album
 + (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
 ```
-
-
-
