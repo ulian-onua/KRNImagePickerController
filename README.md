@@ -73,8 +73,7 @@ For mapping you can use next method:
 [KRNImagePickerController pickFromSource:UIImagePickerControllerSourceTypePhotoLibrary fromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
 if (error) {
     if (error.code == KRNImagePickerOperationIsCancelled) return;
-
-    [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+    //handle error here
 }
 }];
 ```
