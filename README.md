@@ -90,3 +90,19 @@ There are also convinient methods which you can use to map picked image to UIIma
 // from Saved photos album
 + (void)pickFromSavedPhotosAlbumFromViewController:(UIViewController *) viewController andMapToImageView:(UIImageView*)imageView withSucceed:(KRNImagePickerSucceedBlock)succeed;
 ```
+
+## Requirements
+
+* iOS 8.0 and above
+* XCode 6+
+
+## License
+
+KRNImagePickerController is released under the MIT license. See LICENSE for details.
+
+## Contact
+
+Any suggestion or question? Please create a Github issue or reach me out.
+
+[linkedin](https://www.linkedin.com/in/julian-drapaylo)
+
