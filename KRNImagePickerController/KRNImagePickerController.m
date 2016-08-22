@@ -46,7 +46,7 @@ static KRNImagePickerController *imagePickerController;
     if (self) {
         _imagePicker = [UIImagePickerController new];
         _imagePicker.delegate = self;
-        _imagePicker.allowsEditing = YES;
+        _imagePicker.allowsEditing = NO;
         _imagePicker.sourceType = sourceType;
     }
     return self;
