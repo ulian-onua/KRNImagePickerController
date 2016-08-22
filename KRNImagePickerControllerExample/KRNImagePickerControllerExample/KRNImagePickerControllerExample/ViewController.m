@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.imageView.layer.borderWidth = 0.5f;
+    self.imageView.layer.borderColor = [UIColor redColor].CGColor;
     
 }
     
@@ -71,7 +73,7 @@
         if (!error) {
             weakSelf.imageView.image = image;
         } else {
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
@@ -122,5 +124,11 @@
     }];
 }
 
+
+#pragma mark - Dealloc -
+
+- (void)dealloc{
+    NSLog(@"Image Picker Controller was deallocated");
+}
 
 @end

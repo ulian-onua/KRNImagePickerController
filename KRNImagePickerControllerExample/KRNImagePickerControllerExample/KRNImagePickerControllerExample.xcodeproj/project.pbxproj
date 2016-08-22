@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44E7843E1D6B1DDE00F5026E /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E7843D1D6B1DDE00F5026E /* InitialViewController.m */; };
 		44FA359F1D6887C9004876C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FA359E1D6887C9004876C2 /* main.m */; };
 		44FA35A21D6887C9004876C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FA35A11D6887C9004876C2 /* AppDelegate.m */; };
 		44FA35A51D6887C9004876C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44FA35A41D6887C9004876C2 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44E7843C1D6B1DDE00F5026E /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		44E7843D1D6B1DDE00F5026E /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		44FA359A1D6887C9004876C2 /* KRNImagePickerControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KRNImagePickerControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FA359E1D6887C9004876C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		44FA35A01D6887C9004876C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +73,8 @@
 				44FA35B71D688862004876C2 /* KRNImagePickerController */,
 				44FA35BF1D69A1D9004876C2 /* View Controller */,
 				44FA35A61D6887C9004876C2 /* Main.storyboard */,
+				44E7843C1D6B1DDE00F5026E /* InitialViewController.h */,
+				44E7843D1D6B1DDE00F5026E /* InitialViewController.m */,
 				44FA35A91D6887C9004876C2 /* Assets.xcassets */,
 				44FA35AB1D6887C9004876C2 /* LaunchScreen.storyboard */,
 				44FA35AE1D6887C9004876C2 /* Info.plist */,
@@ -187,6 +192,7 @@
 				44FA35BD1D68A609004876C2 /* KRNAlertController.m in Sources */,
 				44FA35A51D6887C9004876C2 /* ViewController.m in Sources */,
 				44FA35BA1D688862004876C2 /* KRNImagePickerController.m in Sources */,
+				44E7843E1D6B1DDE00F5026E /* InitialViewController.m in Sources */,
 				44FA35A21D6887C9004876C2 /* AppDelegate.m in Sources */,
 				44FA359F1D6887C9004876C2 /* main.m in Sources */,
 			);
@@ -341,6 +347,7 @@
 				44FA35B31D6887C9004876C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
