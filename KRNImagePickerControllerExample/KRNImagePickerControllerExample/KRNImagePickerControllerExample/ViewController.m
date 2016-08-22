@@ -25,43 +25,51 @@
 #pragma mark - Pick an image actions -
     
 - (IBAction)fromRandomSource:(id)sender {
+    __weak typeof (self) weakSelf = self;
+    
     [KRNImagePickerController pickFromSource:arc4random() % 3 fromViewController:self withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
-            self.imageView.image = image;
+            weakSelf.imageView.image = image;
         } else {
             if (error.code == KRNImagePickerOperationIsCancelled) return;
             
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
     
 - (IBAction)fromCamera:(id)sender {
+    __weak typeof (self) weakSelf = self;
+    
     [KRNImagePickerController pickFromCameraFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
-            self.imageView.image = image;
+            weakSelf.imageView.image = image;
         } else {
             if (error.code == KRNImagePickerOperationIsCancelled) return;
             
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
 
 - (IBAction)fromPhotoLibrary:(id)sender {
-    [KRNImagePickerController pickFromPhotoLibraryFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
+    __weak typeof (self) weakSelf = self;
+    
+    [KRNImagePickerController pickFromPhotoLibraryFromViewController:weakSelf withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
-            self.imageView.image = image;
+            weakSelf.imageView.image = image;
         } else {
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
     
 - (IBAction)fromSavedPhotosAlbum:(id)sender {
+    __weak typeof (self) weakSelf = self;
+    
     [KRNImagePickerController pickFromSavedPhotosAlbumFromViewController:self withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
-            self.imageView.image = image;
+            weakSelf.imageView.image = image;
         } else {
             [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
@@ -70,37 +78,45 @@
     
 #pragma mark - Map to image actions -
 - (IBAction)mapFromRandomSource:(id)sender {
-    [KRNImagePickerController pickFromSource:arc4random() % 3 fromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+    __weak typeof (self) weakSelf = self;
+    
+    [KRNImagePickerController pickFromSource:arc4random() % 3 fromViewController:self andMapToImageView:weakSelf.imageView withSucceed:^(NSError *error) {
         if (error) {
             if (error.code == KRNImagePickerOperationIsCancelled) return;
             
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
     
 - (IBAction)mapFromCamera:(id)sender {
-    [KRNImagePickerController pickFromCameraFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+     __weak typeof (self) weakSelf = self;
+    
+    [KRNImagePickerController pickFromCameraFromViewController:self andMapToImageView:weakSelf.imageView withSucceed:^(NSError *error) {
         if (error) {
             if (error.code == KRNImagePickerOperationIsCancelled) return;
             
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:@"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
     
 - (IBAction)mapFromPhotoLibrary:(id)sender {
-    [KRNImagePickerController pickFromPhotoLibraryFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+    __weak typeof (self) weakSelf = self;
+    
+    [KRNImagePickerController pickFromPhotoLibraryFromViewController:self andMapToImageView:weakSelf.imageView withSucceed:^(NSError *error) {
         if (error) {
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
     }];
 }
     
 - (IBAction)mapFromSavedPhotosAlbum:(id)sender {
-    [KRNImagePickerController pickFromSavedPhotosAlbumFromViewController:self andMapToImageView:self.imageView withSucceed:^(NSError *error) {
+    __weak typeof (self) weakSelf = self;
+    
+    [KRNImagePickerController pickFromSavedPhotosAlbumFromViewController:self andMapToImageView:weakSelf.imageView withSucceed:^(NSError *error) {
         if (error) {
-            [KRNAlertController showAlertControllerFromViewController:self WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
+            [KRNAlertController showAlertControllerFromViewController:weakSelf WithTitle:(error.code == KRNImagePickerOperationIsCancelled) ?@"IMAGE HASN'T BEEN PICKED" : @"ERROR" Message:error.localizedDescription andButtonTitle:@"OK"];
         }
         
     }];

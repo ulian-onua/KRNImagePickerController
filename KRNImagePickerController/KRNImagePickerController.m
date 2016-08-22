@@ -75,6 +75,7 @@ static KRNImagePickerController *imagePickerController;
 + (void) pickFromSource:(UIImagePickerControllerSourceType)sourceType fromViewController:(UIViewController *) viewController withCompletion:(KRNImagePickerCompletionWithImage) completion {
     
     
+    
     //check if source type is available
     if (![UIImagePickerController isSourceTypeAvailable:sourceType]) {
         NSError* error = [self _getErrorForUnavailableSourceType:sourceType];
