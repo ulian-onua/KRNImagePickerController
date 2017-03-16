@@ -7,6 +7,7 @@ KRNImagePickerController is a wrapper under UIImagePickerController to simplify 
 ##Installation
 - Drag the `KRNImagePickerController/KRNImagePickerController` folder into your project.
 - `#import "KRNImagePickerController.h"` where appropriate.
+Or use pod 'KRNImagePickerController'.
 
 ##Usage
 
