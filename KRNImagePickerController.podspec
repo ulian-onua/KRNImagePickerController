@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "KRNImagePickerController"
   s.version      = "0.0.2"
-  s.summary      = "KRNImagePickerController is a simple class that helps you to send email from iOS application"
+  s.summary      = "KRNImagePickerController is a wrappef above UIImagePickerController to simplify its usage"
 
   s.homepage     = "https://github.com/ulian-onua/KRNImagePickerController"
 

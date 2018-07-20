@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MKD-tr-kVO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MKD-tr-kVO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,18 +19,18 @@
                         <viewControllerLayoutGuide type="bottom" id="vpy-gm-dFn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rlr-Gy-YMp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftD-Ew-Um6">
-                                <rect key="frame" x="191" y="285" width="218" height="30"/>
+                                <rect key="frame" x="78.5" y="318.5" width="218" height="30"/>
                                 <state key="normal" title="To Image Picker View Controller"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="1d8-Ys-lWd"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ftD-Ew-Um6" firstAttribute="centerX" secondItem="Rlr-Gy-YMp" secondAttribute="centerX" id="Ed8-fA-HcA"/>
                             <constraint firstItem="ftD-Ew-Um6" firstAttribute="centerY" secondItem="Rlr-Gy-YMp" secondAttribute="centerY" id="jIR-Ha-MJX"/>
@@ -47,82 +51,82 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWJ-pE-Q2B">
-                                <rect key="frame" x="20" y="508" width="132" height="30"/>
+                                <rect key="frame" x="16" y="528" width="132" height="30"/>
                                 <state key="normal" title="From Photo Library"/>
                                 <connections>
                                     <action selector="mapFromPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gJb-4x-yYU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-z7-EXh">
-                                <rect key="frame" x="20" y="541" width="181" height="30"/>
+                                <rect key="frame" x="16" y="561" width="181" height="30"/>
                                 <state key="normal" title="From Saved Photos Album"/>
                                 <connections>
                                     <action selector="mapFromSavedPhotosAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DLW-NO-gki"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick an image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGk-ub-fX3">
-                                <rect key="frame" x="20" y="257" width="113" height="21"/>
+                                <rect key="frame" x="16" y="277" width="113" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map to UIImageView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-4j-FyU">
-                                <rect key="frame" x="20" y="418" width="168" height="21"/>
+                                <rect key="frame" x="16" y="438" width="168" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-Ks-vIQ">
-                                <rect key="frame" x="20" y="281" width="143" height="30"/>
+                                <rect key="frame" x="16" y="301" width="143" height="30"/>
                                 <state key="normal" title="From random source"/>
                                 <connections>
                                     <action selector="fromRandomSource:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lty-fK-M5d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-fD-Dg7">
-                                <rect key="frame" x="20" y="314" width="93" height="30"/>
+                                <rect key="frame" x="16" y="334" width="93" height="30"/>
                                 <state key="normal" title="From Camera"/>
                                 <connections>
                                     <action selector="fromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jBw-Uw-xVq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCt-DV-xRF">
-                                <rect key="frame" x="20" y="347" width="132" height="30"/>
+                                <rect key="frame" x="16" y="367" width="132" height="30"/>
                                 <state key="normal" title="From Photo Library"/>
                                 <connections>
                                     <action selector="fromPhotoLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KVv-bL-5mU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLM-uL-okv">
-                                <rect key="frame" x="20" y="380" width="181" height="30"/>
+                                <rect key="frame" x="16" y="400" width="181" height="30"/>
                                 <state key="normal" title="From Saved Photos Album"/>
                                 <connections>
                                     <action selector="fromSavedPhotosAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAx-cj-1Q5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVY-8K-PhE">
-                                <rect key="frame" x="20" y="442" width="143" height="30"/>
+                                <rect key="frame" x="16" y="462" width="143" height="30"/>
                                 <state key="normal" title="From random source"/>
                                 <connections>
                                     <action selector="mapFromRandomSource:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lyC-6U-fCV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9d-03-kdA">
-                                <rect key="frame" x="20" y="475" width="93" height="30"/>
+                                <rect key="frame" x="16" y="495" width="93" height="30"/>
                                 <state key="normal" title="From Camera"/>
                                 <connections>
                                     <action selector="mapFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3N-r8-qZz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zTY-2I-wzj">
-                                <rect key="frame" x="20" y="69" width="560" height="180"/>
+                                <rect key="frame" x="16" y="69" width="343" height="200"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ddR-z7-EXh" firstAttribute="top" secondItem="TWJ-pE-Q2B" secondAttribute="bottom" constant="3" id="1eS-Qo-bcb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zTY-2I-wzj" secondAttribute="leading" id="51K-Yd-IFD"/>

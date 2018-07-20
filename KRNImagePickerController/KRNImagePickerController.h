@@ -53,4 +53,6 @@ typedef void(^KRNImagePickerSucceedBlock)(NSError* error);  // if succeed error 
 
 + (void)clearMemory; // clear memory, used by class
 
++ (void)setEditingMode:(BOOL)editingMode;
+
 @end

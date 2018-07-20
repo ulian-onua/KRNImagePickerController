@@ -150,6 +150,7 @@
 				TargetAttributes = {
 					44FA35991D6887C9004876C2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E8TPSF9L49;
 					};
 				};
 			};
@@ -308,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8TPSF9L49;
 				INFOPLIST_FILE = KRNImagePickerControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -320,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8TPSF9L49;
 				INFOPLIST_FILE = KRNImagePickerControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

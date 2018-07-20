@@ -46,7 +46,7 @@ static KRNImagePickerController *imagePickerController;
     if (self) {
         _imagePicker = [UIImagePickerController new];
         _imagePicker.delegate = self;
-        _imagePicker.allowsEditing = YES;
+        _imagePicker.allowsEditing = true;
         _imagePicker.sourceType = sourceType;
     }
     return self;
@@ -166,12 +166,23 @@ static KRNImagePickerController *imagePickerController;
     imagePickerController = nil;
 }
 
++ (void)setEditingMode:(BOOL)editingMode
+{
+    [self _getImagePickerController].imagePicker.allowsEditing = editingMode;
+}
+
+
 #pragma mark - UIImagePickerControllerDelegate -
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
-    UIImage* image = info[UIImagePickerControllerEditedImage];
+    UIImage* image;
+    if ([KRNImagePickerController _getImagePickerController].imagePicker.allowsEditing) {
+        image = info[UIImagePickerControllerEditedImage];
+    } else {
+        image = info[UIImagePickerControllerOriginalImage];
+    }
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     if (self.KRNImagePickerCompletionWithImage) {  //call block

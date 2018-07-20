@@ -56,7 +56,7 @@
 
 - (IBAction)fromPhotoLibrary:(id)sender {
     __weak typeof (self) weakSelf = self;
-    
+    [KRNImagePickerController setEditingMode:NO];
     [KRNImagePickerController pickFromPhotoLibraryFromViewController:weakSelf withCompletion:^(UIImage *image, NSError *error) {
         if (!error) {
             weakSelf.imageView.image = image;
